@@ -8,7 +8,7 @@ export type SheetRow = {
 	area: string;
 	representative: Representative;
 	teamMembers: [TeamMember, TeamMember, TeamMember];
-	participation: Participation;
+	participation: [Participation, Participation, Participation];
 };
 
 export type Representative = {

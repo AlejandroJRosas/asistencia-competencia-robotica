@@ -10,7 +10,7 @@ import {
 	SPREADSHEET_ID,
 	THIRD_DAY_EVENT,
 } from "../shared/constants";
-import type { SheetRow } from "../shared/types/row.type";
+import type { Participation, SheetRow } from "../shared/types/row.type";
 import { auth } from "../shared/connection";
 
 export async function execute(id: string, key: string) {
@@ -86,7 +86,11 @@ export async function getSpreadsheetRows(
 				{ name: row[12], age: Number(row[13]) },
 				{ name: row[14], age: Number(row[15]) },
 			],
-			participation: row[16],
+			participation: row.slice(16, 19) as [
+				Participation,
+				Participation,
+				Participation
+			],
 		}));
 
 	return rows;
@@ -100,7 +104,13 @@ async function findByRowId(
 }
 
 function getParticipationDay(): string | null {
+	const MAY_INDEX = 4;
+	const currentMonth = new Date().getMonth();
 	const currentDay = new Date().getDate();
+
+	if (currentMonth !== MAY_INDEX) {
+		return null;
+	}
 
 	if (currentDay === FIRST_DAY_EVENT.date) {
 		return FIRST_DAY_EVENT.row;
@@ -112,7 +122,7 @@ function getParticipationDay(): string | null {
 		return THIRD_DAY_EVENT.row;
 	}
 
-	return "Q";
+	return null;
 }
 
 export async function updateAttendance(
