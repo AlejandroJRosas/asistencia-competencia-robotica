@@ -1,0 +1,29 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"private": true,
+	"main": "index.js",
+	"scripts": {
+		"start:dev": "ts-node-dev src/index.ts",
+		"start": "node dist/index.js",
+		"build": "tsc"
+	},
+	"license": "ISC",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"ts-node-dev": "2.0.0",
+		"typescript": "5.6.3"
+	},
+	"dependencies": {
+		"@types/cors": "^2.8.17",
+		"@types/express": "^5.0.0",
+		"@types/morgan": "^1.9.9",
+		"cors": "2.8.5",
+		"dotenv": "16.4.5",
+		"ejs": "^3.1.10",
+		"envalid": "8.0.0",
+		"express": "4.21.1",
+		"googleapis": "144.0.0",
+		"morgan": "1.10.0"
+	}
+}

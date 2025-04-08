@@ -1,0 +1,38 @@
+<script lang="ts">
+	let { children } = $props();
+</script>
+
+<style>
+
+	:global(html, body) {
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+		font-family: "Poppins", sans-serif;
+		background-color: #152a55;
+		color: white;
+		margin: 0;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		.brand {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 0.5rem;
+
+			.banner {
+        width: 16rem;
+      }
+		}
+	}
+
+</style>
+
+<div class="brand">
+  <img src="banner.png" alt="logo" class="banner" />
+</div>
+
+{@render children()}

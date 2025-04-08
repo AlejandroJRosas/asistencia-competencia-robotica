@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>Asistencia Evento CamCaroni</title>
+		<style>
+			body {
+				font-family: "Poppins", sans-serif;
+				background-color: #152a55;
+				color: white;
+				margin: 0;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			.container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: auto;
+				padding: 2rem;
+				width: 20rem;
+				border-radius: 10px;
+				background: rgba(255, 255, 255, 0.1);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+			}
+
+			.raffle-code-text {
+				font-size: 2rem;
+				margin: 0;
+				text-align: center;
+			}
+
+			.ticket-text {
+				font-size: 0.75rem;
+				margin: 0.5rem 0;
+				text-align: center;
+				text-wrap: wrap;
+			}
+
+			a {
+				color: white;
+				text-decoration: none;
+				font-size: 1.5rem;
+				margin: 0.5rem 0;
+				border: 1px solid white;
+				padding: 0.5rem 1rem;
+				border-radius: 0.5rem;
+			}
+
+			.brand {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 0.5rem;
+
+				.circle {
+					width: 4rem;
+					height: 4rem;
+					border-radius: 100%;
+					border-top: transparent 1rem solid;
+					border-bottom: white 1rem solid;
+					border-left: white 1rem solid;
+					border-right: white 1rem solid;
+					background-color: transparent;
+					margin-right: 0.5rem;
+					position: relative;
+				}
+
+				.circle::before {
+					content: "";
+					width: 2.5rem;
+					height: 2.5rem;
+					border-radius: 100%;
+					background-color: white;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+
+				.title {
+					width: 13rem;
+					font-size: 1.5rem;
+					line-height: 2rem;
+				}
+			}
+
+			/* Media Queries */
+			@media (max-width: 600px) {
+				.raffle-code-text {
+					font-size: 2rem;
+				}
+
+				.ticket-text {
+					font-size: 1.2rem;
+				}
+
+				.day-number {
+					font-size: 1rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="brand">
+			<div class="circle"></div>
+			<h1 class="title">Expo Empresarial Camcaroní 2024</h1>
+		</div>
+		<div class="container">
+			<h1
+				class="raffle-code-text"
+				style="display: flex; align-items: center; gap: 0.5rem"
+			>
+				<i class="fas fa-ticket" style="rotate: 45deg; color: #ffb330"></i>
+				Sorteo
+			</h1>
+			<h2 class="ticket-text">
+				Seleccione el día de Evento para conseguir un ganador de entre los
+				participantes!
+			</h2>
+
+			<a href="?day=14">Día 1 - 14 de Noviembre</a>
+			<a href="?day=14">Día 2 - 15 de Noviembre</a>
+			<a href="?day=14">Día 3 - 16 de Noviembre</a>
+		</div>
+	</body>
+</html>
